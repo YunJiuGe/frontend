@@ -97,8 +97,9 @@
 import { reactive, ref } from "vue";
 import type { ElForm } from "element-plus";
 import { resetForm, submitForm } from "../common/ts/utils";
+import {post} from "@/api/api"
 
-const ruleFormRef = ref<InstanceType<typeof ElForm>>();
+const ruleFormRef = ref<InstanceType<typeof ElForm>>()
 
 const validatePhone = (rule: any, value: any, callback: any) => {
   var phoneReg = /^1[3|4|5|7|8][0-9]{9}$/;
@@ -163,8 +164,8 @@ const rules = reactive({
       trigger: "blur",
     },
     {
-      min: 8,
-      max: 12,
+      min: 2,
+      max: 4,
       message: "Length should be 2 to 4",
       trigger: "blur",
     },
@@ -180,7 +181,7 @@ const rules = reactive({
     {
       type: "date",
       required: true,
-      message: "Please pick a date",
+      message: "Please pick your Birthday",
       trigger: ["blur", "change"],
     },
   ],
@@ -206,7 +207,9 @@ const rules = reactive({
 });
 
 const onSubmit = () => {
-  console.log(form);
+  console.log(form)
+  submitForm(ruleFormRef.value)
+  post()
 };
 </script>
 
