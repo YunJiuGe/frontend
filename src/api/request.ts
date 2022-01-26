@@ -14,7 +14,7 @@ export class Request {
     public static init() {
         // 创建axios实例
         this.axiosInstance = axios.create({
-            baseURL: process.env.VUE_APP_BASE_URL + '/api/v1',
+            baseURL: process.env.VUE_APP_BASE_URL,
             timeout: 6000
         });
         // 初始化拦截器

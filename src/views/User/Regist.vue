@@ -83,7 +83,7 @@
       </el-form-item>
       <el-form-item>
         <div style="margin-left: -120px;">
-        <el-button type="primary" @click="submitForm(ruleFormRef)"
+        <el-button type="primary" @click="onSubmit()"
           >Create</el-button
         >
         <el-button @click="resetForm(ruleFormRef)">Reset</el-button>
@@ -201,7 +201,7 @@ const rules = reactive({
     {
       type: "email",
       message: "Please input right e-mail",
-      trigger: ["change", "blur"],
+      trigger: ["blur"],
     },
   ],
 });
@@ -209,7 +209,7 @@ const rules = reactive({
 const onSubmit = () => {
   console.log(form)
   submitForm(ruleFormRef.value)
-  post()
+  post('/regist',{form})
 };
 </script>
 

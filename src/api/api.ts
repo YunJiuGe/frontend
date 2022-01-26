@@ -5,5 +5,9 @@ export function post (url: string,data: any)  {
     url: url,
     method: 'post',
     data: data
+  }).then(function(){
+    console.log("111")
+  }).catch(function (error) {
+    console.log(error)
   })
 }
