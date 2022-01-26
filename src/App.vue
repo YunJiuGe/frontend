@@ -16,8 +16,12 @@
             <template #title
               ><router-link to="/Regist">注册</router-link></template
             >
-            <el-menu-item index="2-1">item one</el-menu-item>
-            <el-menu-item index="2-2">item two</el-menu-item>
+            <el-menu-item index="2-1">
+              <router-link to="/Guid">指导文件查看</router-link>
+            </el-menu-item>
+            <el-menu-item index="2-2">
+              111
+            </el-menu-item>
             <el-menu-item index="2-3">item three</el-menu-item>
           </el-sub-menu>
           <el-menu-item index="3" disabled>Info</el-menu-item>
@@ -144,6 +148,7 @@ import {
   Setting,
   ArrowDown,
 } from "@element-plus/icons-vue";
+
 const handleOpen = (key: string, keyPath: string[]) => {
   console.log(key, keyPath);
 };
