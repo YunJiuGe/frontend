@@ -8,7 +8,7 @@
       class="demo-ruleForm"
       :size="large"
       :status-icon="true"
-      style="width: 500px;"
+      style="width: 500px"
     >
       <el-form-item label="账户" prop="account">
         <div class="left">
@@ -40,7 +40,11 @@
       </el-form-item>
       <el-form-item label="性别" prop="sex">
         <div class="left">
-          <el-select v-model="form.sex" placeholder="please select your sex" style="width: 300px">
+          <el-select
+            v-model="form.sex"
+            placeholder="please select your sex"
+            style="width: 300px"
+          >
             <el-option label="男" value="1"></el-option>
             <el-option label="女" value="0"></el-option>
           </el-select>
@@ -82,11 +86,9 @@
         </div>
       </el-form-item>
       <el-form-item>
-        <div style="margin-left: -120px;">
-        <el-button type="primary" @click="onSubmit()"
-          >Create</el-button
-        >
-        <el-button @click="resetForm(ruleFormRef)">Reset</el-button>
+        <div style="margin-left: -120px">
+          <el-button type="primary" @click="onSubmit()">Create</el-button>
+          <el-button @click="resetForm(ruleFormRef)">Reset</el-button>
         </div>
       </el-form-item>
     </el-form>
@@ -97,9 +99,9 @@
 import { reactive, ref } from "vue";
 import type { ElForm } from "element-plus";
 import { resetForm, submitForm } from "../common/ts/utils";
-import {post} from "@/api/api"
+import { post } from "@/api/api";
 
-const ruleFormRef = ref<InstanceType<typeof ElForm>>()
+const ruleFormRef = ref<InstanceType<typeof ElForm>>();
 
 const validatePhone = (rule: any, value: any, callback: any) => {
   var phoneReg = /^1[3|4|5|7|8][0-9]{9}$/;
@@ -207,9 +209,8 @@ const rules = reactive({
 });
 
 const onSubmit = () => {
-  console.log(form)
-  submitForm(ruleFormRef.value)
-  post('/regist',{form})
+  submitForm(ruleFormRef.value);
+  post("/regist", { form });
 };
 </script>
 
