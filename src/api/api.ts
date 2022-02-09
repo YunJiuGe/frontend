@@ -4,10 +4,14 @@ export function post (url: string,data: any)  {
   return Request.axiosInstance({
     url: url,
     method: 'post',
-    data: data
-  }).then(function(){
-    console.log("111")
-  }).catch(function (error) {
-    console.log(error)
+    data: data,
+  })
+}
+
+export function get (url: string,data: any)  {
+  return Request.axiosInstance({
+    url: url,
+    method: 'get',
+    data: data,
   })
 }

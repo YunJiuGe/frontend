@@ -14,7 +14,7 @@ export class Request {
     public static init() {
         // 创建axios实例
         this.axiosInstance = axios.create({
-            baseURL: process.env.VUE_APP_BASE_URL,
+            baseURL: "http://localhost:9090",
             timeout: 6000
         });
         // 初始化拦截器
@@ -30,7 +30,7 @@ export class Request {
     // 初始化拦截器
     public static initInterceptors() {
         // 设置post请求头
-        this.axiosInstance.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+        this.axiosInstance.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8';
         /**
          * 请求拦截器
          * 每次请求前，如果存在token则在请求头中携带token

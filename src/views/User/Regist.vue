@@ -210,7 +210,22 @@ const rules = reactive({
 
 const onSubmit = () => {
   submitForm(ruleFormRef.value);
-  post("/regist", { form });
+  post("User/AddUser", JSON.stringify({
+    account:form.account,
+    password:form.password,
+    deptId:1,
+    roleId:1,
+    name:form.name,
+    sex:form.sex,
+    mobile:form.phone,
+    email:form.email,
+    createStaff:1,
+    }))
+  .then(function(res){
+    console.log(res.data)
+  }).catch(function (error) {
+    console.log(error)
+  });
 };
 </script>
 
